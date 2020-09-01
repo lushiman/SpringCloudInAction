@@ -1,0 +1,8 @@
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false  #禁止自己当做服务注册在做注册中心集群的时候，register-with-eureka必须打开，因为需要进行相互注册，不然副本无法可用
+    fetch-registry: false   #屏蔽注册信息
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
